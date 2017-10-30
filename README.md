@@ -1,3 +1,3 @@
-# Arduino Project(s)
+# Arduino Project
 
 ## Countdown
