@@ -1,3 +1,9 @@
+/*
+  Alexander Freyr Lúðvíksson
+  Helga Eyþórsdóttir
+  Íris Ósk Óttardóttir
+  Jóhann Kjartansson
+*/
 
 const int rightButton = 1;
 const int leftButton = 0;
@@ -110,8 +116,16 @@ void waitForStart()
 
   // Wait for input
   bool running = true;
+
+  int animCounter = 0;
   while(running)
   {
+    if(animCounter % 6 == 0)
+    {
+      animCounter = 0;
+    }
+    animation(animCounter);
+    animCounter++;
     int leftButtonState = digitalRead(leftButton);
     int rightButtonState = digitalRead(rightButton);
 
@@ -121,6 +135,42 @@ void waitForStart()
     }
   }
   delay(500);
+}
+
+/*
+  Animates the display to go in circles.
+*/
+void animation(int number)
+{
+  digitalWrite(A, HIGH);
+  digitalWrite(B, HIGH);
+  digitalWrite(C, HIGH);
+  digitalWrite(D, HIGH);
+  digitalWrite(E, HIGH);
+  digitalWrite(F, HIGH);
+  digitalWrite(G, HIGH);
+  switch(number)
+  {
+    case 0:
+      digitalWrite(B, LOW);
+      break; 
+    case 1:
+      digitalWrite(C, LOW);
+      break;
+    case 2:
+      digitalWrite(D, LOW);
+      break;
+    case 3:
+      digitalWrite(E, LOW);
+      break;
+    case 4:
+      digitalWrite(F, LOW);
+      break;
+    case 5:
+      digitalWrite(A, LOW); 
+      break;
+  }
+  delay(100);
 }
 
 /*
