@@ -8,8 +8,8 @@
 const int rightButton = 1;
 const int leftButton = 0;
 
-const int rightRed = 9;
-const int rightGreen = 8;
+const int rightRed = 13;
+const int rightGreen = 12;
 const int leftGreen = 10;
 const int leftRed = 11;
 
@@ -19,8 +19,8 @@ int C = 4;
 int D = 5;
 int DP = 7;
 int E = 6;
-int F = 13;
-int G = 12;
+int F = 9;
+int G = 8;
 
 void setup()
 {
