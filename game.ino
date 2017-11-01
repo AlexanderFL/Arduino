@@ -136,7 +136,9 @@ void waitForStart()
       running = false;
     }
   }
-  delay(500);
+  // Give the player some time to release the button before
+  // the game starts.
+  delay(750);
 }
 
 /*
