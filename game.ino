@@ -48,7 +48,8 @@ void setup()
   waitForStart();
 }
 
-int displayCounter = 9;
+int displayCounter = random(4, 10);
+int timerSpeed = random(250, 550);
 void loop()
 { 
   // Check if game is over
@@ -68,7 +69,7 @@ void loop()
       // players, we wait a few seconds to update the display again.
       int starttime = millis();
       int endtime = starttime;
-      while((endtime - starttime) <= 500)
+      while((endtime - starttime) <= timerSpeed)
       {
         // If players press the button too early, they should lose, so we
         // still have to check for button presses while we are waiting for the
@@ -80,7 +81,7 @@ void loop()
     }
     checkPress();
   }else{
-    delay(5000); // Wait 5 seconds before starting again.
+    delay(3000); // Wait 3 seconds before restarting the game
     waitForStart();
   }
 }
@@ -112,7 +113,8 @@ void waitForStart()
   digitalWrite(leftRed, LOW);
   digitalWrite(rightGreen, LOW);
   digitalWrite(rightRed, LOW);
-  displayCounter = 9;
+  displayCounter = random(3, 10);
+  timerSpeed = random(250, 550);
 
   // Wait for input
   bool running = true;
