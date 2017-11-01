@@ -142,6 +142,54 @@ void waitForStart()
 }
 
 /*
+Function checks if a button is pressed.
+
+If a button is pressed the function will light the LED lights,
+with a winner (green) and a loser (red).
+*/
+void checkPress()
+{
+  int leftButtonState = digitalRead(leftButton);
+  int rightButtonState = digitalRead(rightButton);
+  
+  // If any lightbulbs are on, the game is over and no more buttons can be pressed.
+  if(isOver())
+  {
+    // If left button is pressed.
+    if(leftButtonState == LOW)
+    {
+      // If timer has reached zero when player presses his button
+      if(displayCounter == 0)
+      {
+        // Light the green LED on the left side and red LED on the right side
+        digitalWrite(leftGreen, HIGH);
+        digitalWrite(rightRed, HIGH);
+      }
+      else
+      {
+        digitalWrite(leftRed, HIGH);
+        digitalWrite(rightGreen, HIGH);
+      }
+    } 
+
+    // If right button is pressed.
+    if(rightButtonState == LOW)
+    {
+      if(displayCounter == 0)
+      {
+        digitalWrite(rightGreen, HIGH);
+        digitalWrite(leftRed, HIGH);
+      }
+      else
+      {
+        digitalWrite(rightRed, HIGH);
+        digitalWrite(leftGreen, HIGH);
+      }
+    } 
+  }
+}
+
+/*
   Animates the display to go in circles.
 */
 void animation(int number)
@@ -175,52 +223,6 @@ void animation(int number)
       break;
   }
   delay(100);
-}
-
-/*
-Function checks if a button is pressed.
-
-If a button is pressed the function will light the LED lights,
-with a winner (green) and a loser (red).
-*/
-void checkPress()
-{
-  int leftButtonState = digitalRead(leftButton);
-  int rightButtonState = digitalRead(rightButton);
-  
-  // If any lightbulbs are on, the game is over and no more buttons can be pressed.
-  if(isOver())
-  {
-    // If left button is pressed.
-    if(leftButtonState == LOW)
-    {
-      if(displayCounter == 0)
-      {
-        digitalWrite(leftGreen, HIGH);
-        digitalWrite(rightRed, HIGH);
-      }
-      else
-      {
-        digitalWrite(leftRed, HIGH);
-        digitalWrite(rightGreen, HIGH);
-      }
-    } 
-
-    // If right button is pressed.
-    if(rightButtonState == LOW)
-    {
-      if(displayCounter == 0)
-      {
-        digitalWrite(rightGreen, HIGH);
-        digitalWrite(leftRed, HIGH);
-      }
-      else
-      {
-        digitalWrite(rightRed, HIGH);
-        digitalWrite(leftGreen, HIGH);
-      }
-    } 
-  }
 }
 
 //The method that displays the numbers 
