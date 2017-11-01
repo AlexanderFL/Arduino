@@ -12,3 +12,5 @@ To start the game press either one of the two buttons and get the players ready,
 Connecting the 7-digit-display &mdash; http://www.instructables.com/id/Arduino-7-Segment-Click-Counter/
 
 User *'CrossRoads'* for timer template &mdash; http://forum.arduino.cc/index.php?topic=45787.0
+
+This project is based on the project ideas in canvas.
