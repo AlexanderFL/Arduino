@@ -13,8 +13,8 @@ Connecting the 7-digit-display &mdash; http://www.instructables.com/id/Arduino-7
 
 User *'CrossRoads'* for timer template &mdash; http://forum.arduino.cc/index.php?topic=45787.0
 
-This project is based on the project ideas in canvas.
-
 ---
 
-*Project made by Alexander Freyr Lúðvíksson, Helga Eyþórsdóttir, Íris Ósk Óttardóttir and Jóhann Kjartansson*
+This project is based on the project ideas in canvas.
+
+*Made by Alexander Freyr Lúðvíksson, Helga Eyþórsdóttir, Íris Ósk Óttardóttir and Jóhann Kjartansson*
